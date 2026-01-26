@@ -8,6 +8,8 @@ while True:
     except ValueError:
         print('enter a numeric value')
         continue
+    except EOFError:
+        continue
 secret = random.randint(1, level)
 while True:
     try:

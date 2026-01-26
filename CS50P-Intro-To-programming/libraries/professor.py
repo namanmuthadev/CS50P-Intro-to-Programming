@@ -3,8 +3,7 @@ import random
 
 def main():
     score=0
-    print("Level: ", end="")
-    level = int(input())
+    level = get_level()
     for b in range(0,10):
         i=0
         x=generate_integer(level)
@@ -20,7 +19,7 @@ def main():
                 print(f'{x} + {y} = ',end='')
                 answer=int(input())
                 if answer==z:
-                    if i==0:
+                    if i<3:
                         score=score+1
                     break
                 else:
@@ -40,7 +39,7 @@ def get_level():
             else:
                 break
         except ValueError:
-            continue
+            pass
     return level
 def generate_integer(level):
     if level==1:
@@ -50,5 +49,5 @@ def generate_integer(level):
     else:
         s=random.randint(100,999)
     return s
-if __name__ == "__main__":
+if __name__ =="__main__":
     main()
